@@ -9,8 +9,7 @@ const UserTable = ({
     onSort,
     selectedSort,
     onToggleBookMark,
-    onDelete,
-    ...rest
+    onDelete
 }) => {
     const columns = {
         name: {
@@ -54,9 +53,7 @@ const UserTable = ({
             )
         }
     };
-    return (
-        <Table {...{ onSort, selectedSort, columns, data: users }} />
-    );
+    return <Table {...{ onSort, selectedSort, columns, data: users }} />;
 };
 
 UserTable.propTypes = {

@@ -12,7 +12,22 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
             onSort({ path: item, order: "asc" });
         }
     };
-
+    const renderSortArrow = (currentPath) => {
+        if (
+            currentPath &&
+            currentPath === selectedSort.path &&
+            selectedSort.order === "asc"
+        ) {
+            return <i className="bi bi-arrow-up-short fs-5"></i>;
+        } else if (
+            currentPath &&
+            currentPath === selectedSort.path &&
+            selectedSort.order === "desc"
+        ) {
+            return <i className="bi bi-arrow-down-short fs-5"></i>;
+        }
+        return null;
+    };
     return (
         <thead>
             <tr>
@@ -27,7 +42,8 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
                         {...{ role: columns[column].path && "button" }}
                         scope="col"
                     >
-                        {columns[column].name}
+                        {columns[column].name}{" "}
+                        {renderSortArrow(columns[column].path)}
                     </th>
                 ))}
             </tr>

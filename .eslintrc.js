@@ -20,6 +20,7 @@ module.exports = {
         "no-unused-vars": ["warn"],
         "no-console": ["warn"],
         "prefer-const": ["warn"],
-        "space-before-function-paren": ["off"]
+        "space-before-function-paren": ["off"],
+        "multiline-ternary": ["off"]
     }
 };
