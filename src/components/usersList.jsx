@@ -6,8 +6,9 @@ import SearchStatus from "./searchStatus";
 import api from "../api/index";
 import UserTable from "./usersTable";
 import _ from "lodash";
+import SearchString from "./searchString";
 
-const Users = () => {
+const UsersList = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [professions, setProfessions] = useState();
     const [selectedProf, setSelectedProf] = useState();
@@ -88,6 +89,7 @@ const Users = () => {
                 )}
                 <div className="d-flex flex-column">
                     <SearchStatus length={count} />
+                    <SearchString />
                     {count > 0 && (
                         <UserTable
                             users={userCrop}
@@ -112,4 +114,4 @@ const Users = () => {
     return "loading...";
 };
 
-export default Users;
+export default UsersList;
